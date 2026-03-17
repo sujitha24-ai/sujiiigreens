@@ -1,0 +1,156 @@
+AI Security & Authentication Topics – Research Notes
+1. Single Sign-On (SSO)
+Single Sign-On (SSO) is an authentication system that allows a user to log in once and access multiple applications without logging in again.
+
+Example:
+Logging into a Google account allows access to Gmail, YouTube, Google Drive, and other services without separate logins.
+
+Benefits:
+• Better user experience
+• Saves time
+• Centralized authentication
+• Reduced password fatigue
+
+How it works:
+1. User tries to access an application.
+2. Application redirects user to Identity Provider (IdP).
+3. User enters credentials.
+4. IdP verifies identity.
+5. User receives authentication token and accesses multiple services.
+2. SAML (Security Assertion Markup Language)
+SAML is a protocol used to exchange authentication and authorization information between systems. It is commonly used to implement Single Sign-On in enterprise systems.
+
+Components:
+• User
+• Identity Provider (IdP)
+• Service Provider (SP)
+
+Process:
+1. User requests access to application.
+2. Application redirects user to IdP.
+3. IdP authenticates the user.
+4. IdP sends a SAML assertion to the service provider.
+5. Access is granted.
+3. OpenID Connect (OIDC)
+OpenID Connect is an authentication protocol built on top of OAuth 2.0. It allows applications to verify the identity of a user.
+
+Example:
+Login with Google or Login with Microsoft.
+
+Process:
+1. User clicks login using provider.
+2. Application redirects to OpenID provider.
+3. Provider authenticates user.
+4. Provider sends ID token.
+5. User gains access.
+
+OIDC is commonly used in modern web and mobile applications.
+4. OAuth 2.0
+OAuth 2.0 is an authorization framework that allows applications to access user data without sharing passwords.
+
+Roles:
+• Resource Owner (User)
+• Client Application
+• Authorization Server
+• Resource Server
+
+Working:
+1. User grants permission to an application.
+2. Authorization server generates an access token.
+3. Application uses the token to access specific resources.
+
+Benefits:
+• Improved security
+• No password sharing
+• Controlled access to data
+5. JWT (JSON Web Token)
+JWT is a compact token format used for secure information exchange between systems.
+
+Structure:
+Header.Payload.Signature
+
+Header:
+Contains token type and algorithm.
+
+Payload:
+Contains user information such as user ID, role, or permissions.
+
+Signature:
+Ensures the token has not been modified.
+
+JWT is widely used in API authentication and modern web applications.
+6. Session vs Token Authentication
+Session Authentication:
+• Server stores user session information.
+• Browser stores a session ID in cookies.
+• Server checks session ID for each request.
+
+Token Authentication:
+• Server generates a token (usually JWT).
+• Client stores the token.
+• Token is sent with every request.
+
+Session authentication is common in traditional websites, while token authentication is widely used in APIs and modern applications.
+7. CSRF (Cross-Site Request Forgery)
+CSRF is a security attack where a malicious website tricks a logged-in user into performing unwanted actions on another site.
+
+Example:
+A user logged into a bank website visits a malicious page that secretly sends a transfer request.
+
+Prevention methods:
+• CSRF tokens
+• SameSite cookies
+• Double submit cookies
+8. CORS (Cross-Origin Resource Sharing)
+CORS is a browser security mechanism that controls how resources from one domain can be requested by another domain.
+
+Example:
+A frontend running on localhost:3000 requesting data from api.website.com.
+
+Servers allow access using headers such as:
+Access-Control-Allow-Origin
+
+CORS enables secure communication between different web applications.
+9. HTTPS and TLS
+HTTPS is the secure version of HTTP used for communication between a browser and a server.
+
+TLS (Transport Layer Security) encrypts the communication to ensure:
+• Confidentiality
+• Data integrity
+• Authentication
+
+Websites using HTTPS display a lock icon in the browser.
+10. TCP Handshake vs TLS Handshake
+TCP Handshake:
+Used to establish a network connection.
+
+Three steps:
+1. SYN
+2. SYN-ACK
+3. ACK
+
+TLS Handshake:
+Used to establish secure encrypted communication.
+
+Steps include:
+• Client Hello
+• Server Hello
+• Certificate verification
+• Key exchange
+• Secure communication begins
+11. Redis and its Use Cases
+Redis is an in-memory database used for high-speed data storage and retrieval.
+
+Features:
+• Extremely fast
+• Key-value storage
+• Supports multiple data structures
+
+Common use cases:
+• Caching frequently accessed data
+• Session storage
+• Real-time analytics
+• Gaming leaderboards
+• Message queues
+
+Redis improves performance by reducing the load on traditional databases.
